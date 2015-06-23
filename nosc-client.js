@@ -9,9 +9,20 @@ define(['/socket.io/socket.io.js'], function(io) {
   var socket = io();
 
   var onNosc = function(handlerFunction) {
-    socket.on('nosc-message', function(message, sender) {
+    var handleIndividualMessage = function(message, sender) {
       console.log('nosc-message <= ', message, sender);
       handlerFunction(message);
+    };
+
+    socket.on('nosc-message', function(message, sender) {
+      if (message[0] == '#bundle' && message.length > 2) {
+        var subMessages = message.slice(2);
+        subMessages.forEach(function(subMessage) {
+          handleIndividualMessage(subMessage, sender);
+        });
+      }
+      else 
+        handleIndividualMessage(message, sender);
     });
   };
   
