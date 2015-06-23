@@ -1,0 +1,33 @@
+{
+  "name": "nosc-lib",
+  "version": "1.0.0",
+  "description": "OSC over websockets for browser OSC",
+  "main": "nosc-server.js",
+  "dependencies": {
+    "socket.io": "1.1.0",
+    "node-osc": "0.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haszari/nosc-lib.git"
+  },
+  "keywords": [
+    "OSC",
+    "web",
+    "control",
+    "interaction",
+    "supercollider",
+    "ableton",
+    "html",
+    "websockets"
+  ],
+  "author": "haszari@cartoonbeats.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haszari/nosc-lib/issues"
+  },
+  "homepage": "https://github.com/haszari/nosc-lib"
+}
